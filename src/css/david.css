@@ -1,0 +1,36 @@
+.especs-maybach-section {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+.especs-maybach-imagen {
+    width: 45%;
+    max-width: 900px;
+}
+
+.especs-maybach-imagen img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+
+.especs-maybach-tecnicas {
+    width: 25%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.especs-maybach-tarjeta {
+    background: rgba(0, 0, 0, 0.82);
+    color: #ffd700;
+    padding: 30px 20px;
+    border-radius: 20px;
+    font-weight: 800;
+    font-size: 1.8rem;
+    text-align: center;
+}
