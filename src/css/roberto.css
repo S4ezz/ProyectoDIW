@@ -1,0 +1,60 @@
+.roberto-bg-dark {
+    background-color: #050505 !important;
+}
+
+.tracking-widest {
+    letter-spacing: 0.25em;
+}
+
+.tracking-wide {
+    letter-spacing: 0.1em;
+}
+
+#roberto-intro {
+    background: radial-gradient(circle at center, #1a1a24 0%, #050505 100%);
+}
+
+.roberto-intro-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="4" height="4"><rect width="4" height="4" fill="none"/><circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.05)"/></svg>') repeat;
+}
+
+.roberto-scrollytelling-wrapper {
+    display: block;
+}
+
+.roberto-pinned-container {
+    height: 100vh;
+}
+
+.roberto-bg {
+    transition: transform 0.1s linear;
+}
+
+.roberto-separator {
+    height: 3px;
+    width: 50px;
+    background: #fff700;
+    border-radius: 2px;
+}
+
+.roberto-btn-premium {
+    backdrop-filter: blur(5px);
+    border-color: rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+.roberto-btn-premium:hover {
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.roberto-content-container {
+    padding-bottom: 20vh;
+}
