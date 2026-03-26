@@ -10,7 +10,6 @@
 /* Efectos en las tarjetas */
 .maybach-section .card {
   border-radius: 12px;
-  /* overflow: hidden; COMENTADO: Permitimos que la imagen vuele por encima y fuera de la tarjeta al inicio de la animacion */
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
@@ -28,19 +27,19 @@
   display: block;
   border-radius: 12px 12px 0 0;
   position: relative;
-  z-index: 20; /* Aseguramos que vuele por encima de todo el texto */
+  z-index: 20;
 }
 
 /* Estilos de los inputs */
 .maybach-section .form-control {
   border-radius: 8px;
-  background-color: #f3f4f6 !important;
+  background-color: #c0c0c0 !important;
   transition: all 0.3s ease;
 }
 
 .maybach-section .form-control:focus {
   box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.05);
-  background-color: #fff !important;
+  background-color: #e9e7e7 !important;
   transform: translateY(-2px);
 }
 
@@ -53,16 +52,16 @@
 }
 
 .maybach-section .payment-method:hover {
-  background-color: #e9ecef;
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  background-color: #cecece;
+  transform: translateY(-10px);
+  box-shadow: 0 10px 15px rgba(0,0,0,0.08);
 }
 
 .maybach-section .payment-method.active {
   background-color: #212529 !important;
   color: white !important;
   border-color: #212529 !important;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 15px rgba(0,0,0,0.5);
 }
 
 .maybach-section .payment-method.active svg {
@@ -70,7 +69,7 @@
 }
 
 .maybach-section .payment-method.active:hover {
-  background-color: #343a40 !important;
+  background-color: #000000 !important;
   transform: translateY(-5px);
 }
 
