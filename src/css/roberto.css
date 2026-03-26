@@ -16,11 +16,10 @@
 
 .roberto-intro-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="4" height="4"><rect width="4" height="4" fill="none"/><circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.05)"/></svg>') repeat;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.08) 0%, rgba(0, 0, 0, 0) 60%);
+    pointer-events: none;
 }
 
 .roberto-scrollytelling-wrapper {
@@ -37,9 +36,14 @@
 
 .roberto-separator {
     height: 3px;
-    width: 50px;
-    background: #fff700;
+    width: 60px;
+    background: #ffffff;
     border-radius: 2px;
+}
+
+.roberto-card {
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.8) !important;
 }
 
 .roberto-btn-premium {
