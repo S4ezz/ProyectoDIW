@@ -1,4 +1,9 @@
+import './css/bootstrap.min.css'
 import './style.css'
+import './css/david.css'
+import './css/roberto.css'
+import './css/ivan.css'
+import './js/bootstrap.bundle.min.js'
 
 gsap.registerPlugin(ScrollTrigger);
 
