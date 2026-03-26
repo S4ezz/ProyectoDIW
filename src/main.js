@@ -7,30 +7,18 @@ import "./js/bootstrap.bundle.min.js";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Función que se ejecuta cuando TODO (incluyendo imágenes) ha cargado
 window.addEventListener("load", () => {
   // Navbar
-
   // Animación de entrada del logo
   gsap.to(".navbar-logo", {
     opacity: 1,
     y: 0,
     duration: 0.8,
     ease: "power3.out",
-    delay: 0.2,
+    delay: 0.1,
   });
 
-  // Animación de entrada de los botones del menú
-  gsap.to(".nav-link-premium", {
-    opacity: 1,
-    y: 0,
-    duration: 0.8,
-    ease: "power3.out",
-    stagger: 0.1,
-    delay: 0.4,
-  });
-
-  // Navbar cambia a negro al hacer scroll
+  // Cambia de estilo al hacer scroll
   window.addEventListener("scroll", () => {
     const nav = document.querySelector(".premium-navbar");
     if (window.scrollY > 50) {
@@ -38,28 +26,6 @@ window.addEventListener("load", () => {
     } else {
       nav.classList.remove("scrolled");
     }
-  });
-
-  // Smooth Scroll (Bajar suavemente a las secciones)
-  document.querySelectorAll('a[href^="#"]').forEach((boton) => {
-    boton.addEventListener("click", (evento) => {
-      evento.preventDefault();
-      const destino = document.querySelector(boton.getAttribute("href"));
-      if (destino) {
-        const posicion =
-          destino.getBoundingClientRect().top + window.pageYOffset;
-        window.scrollTo({
-          top: posicion - 70,
-          behavior: "smooth",
-        });
-
-        // Cerramos menú móvil si está abierto
-        const menu = document.getElementById("navbarLuxe");
-        if (menu && menu.classList.contains("show")) {
-          bootstrap.Collapse.getInstance(menu).hide();
-        }
-      }
-    });
   });
 
   // David
@@ -104,73 +70,60 @@ window.addEventListener("load", () => {
     .to(".barra-velocidad", { width: "95%", duration: 1.5 });
 
   // Roberto
-  const introRobertoTl = gsap.timeline({
+  // Título y Subtítulo (aparecen a la vez)
+  gsap.from(".roberto-title, .roberto-subtitle", {
     scrollTrigger: {
-      trigger: "#roberto-intro",
-      start: "top 60%",
-      toggleActions: "play none none reverse",
+      trigger: "#roberto-intro", // Elemento que activa la animación
+      start: "top 60%", // Empieza cuando el inicio de la sección llega al 60% de la pantalla
+      toggleActions: "play none none reverse", // Se activa al bajar y al subir rebobina para repetir el efecto
     },
+    y: 50, // Ambos suben 50px desde abajo
+    opacity: 0, // Empiezan invisibles
+    duration: 1, // Tiempo que tardan en aparecer por completo
+    ease: "power3.out",
+    stagger: 0 // Salen exactamente a la vez
   });
 
-  introRobertoTl
-    .from(".roberto-title", {
-      y: 50,
-      opacity: 0,
-      duration: 1,
-      ease: "power3.out",
-    })
-    .from(
-      ".roberto-subtitle",
-      { y: 30, opacity: 0, duration: 0.8, ease: "power3.out" },
-      "-=0.6",
-    );
-
+  // Scrollytelling
+  // Guardamos todos los extras en un array para luego recorrerlo
   const robertoSteps = gsap.utils.toArray(".roberto-step");
+
   if (robertoSteps.length > 0) {
+    // Hacemos un foreach para recorrer extra por extra y aplicar los efectos
     robertoSteps.forEach((step) => {
       gsap.from(step.querySelector(".roberto-card"), {
         scrollTrigger: {
-          trigger: step,
-          start: "top 80%",
-          end: "center center",
-          scrub: 1,
+          trigger: step, // El extra que esta en pantalla se activa cuando entra en el scroll
+          start: "top 80%", // Empieza a subir cuando asoma por abajo
+          end: "center center", // Termina de colocarse al llegar al medio
+          scrub: 1, // La animación sigue el scroll
         },
-        y: 100,
-        opacity: 0,
+        y: 100, // Viene desde 100px más abajo
+        opacity: 0, // Empieza invisible
         ease: "power2.out",
       });
     });
 
+    // Cambiamos la imagen de fondo al segundo extra
     gsap.to(".roberto-bg-llantas", {
       scrollTrigger: {
-        trigger: robertoSteps[1],
-        start: "top 80%",
-        end: "center center",
-        scrub: 1,
+        trigger: robertoSteps[1], // Se activa cuando estamos en el segundo extra
+        start: "top 80%", // Empieza a subir cuando asoma por abajo
+        end: "center center", // Termina de colocarse al llegar al medio
+        scrub: 1, // La animación sigue el scroll
       },
-      opacity: 1,
+      opacity: 1, // La imagen se vuelve visible
     });
 
+    // Cambiamos la imagen de fondo al tercer extra
     gsap.to(".roberto-bg-maybach", {
       scrollTrigger: {
-        trigger: robertoSteps[2],
-        start: "top 80%",
-        end: "center center",
-        scrub: 1,
+        trigger: robertoSteps[2], // Se activa cuando estamos en el tercer extra
+        start: "top 80%", // Empieza a subir cuando asoma por abajo
+        end: "center center", // Termina de colocarse al llegar al medio
+        scrub: 1, // La animación sigue el scroll
       },
-      opacity: 1,
-    });
-
-    gsap.to(".roberto-bg", {
-      scrollTrigger: {
-        trigger: ".roberto-scrollytelling-wrapper",
-        start: "top top",
-        end: "bottom top",
-        scrub: 1,
-      },
-      scale: 1.15,
-      transformOrigin: "center center",
-      ease: "none",
+      opacity: 1, // La imagen se vuelve visible
     });
   }
 
