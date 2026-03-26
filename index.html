@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="./src/css/david.css">
     <link rel="stylesheet" href="./src/css/roberto.css">
     <link rel="stylesheet" href="./src/css/ivan.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   </head>
 
   <body>
@@ -20,34 +22,67 @@
       </div>
     </section>
     <!-- David -->
-    <section class="especs-maybach-section">
-      <div class="especs-maybach-tecnicas" id="tarjetas-izq">
-        <div class="especs-maybach-tarjeta tarjeta-izq">
-          <p>COMBUSTIBLE</p>
-          <p>GASOLINA</p>
+    <section class="especs-maybach-section vh-100 d-flex align-items-center justify-content-between py-5 bg-dark">
+      <div class="especs-maybach-tecnicas w-25 d-flex flex-column p-4 gap-4" id="tarjetas-izq">
+        
+        <div class="card tarjeta-izq bg-black text-white border border-secondary rounded-4 shadow">
+          <div class="card-body text-center py-4">
+            <i class="fas fa-gas-pump"></i>
+            <h6 class="text-uppercase text-secondary fw-bold mb-2 tracking-wide">Combustible</h6>
+            <h4 class="mb-0 fw-light">Gasolina</h4>
+          </div>
         </div>
-        <div class="especs-maybach-tarjeta tarjeta-izq">
-          <p>VELOCIDAD MÁXIMA</p>
-          <p>250 km/h</p>
+
+        <div class="card tarjeta-izq bg-black text-white border border-secondary rounded-4 shadow">
+          <div class="card-body text-center py-4">
+            <i class="fas fa-tachometer-alt"></i>
+            <h6 class="text-uppercase text-secondary fw-bold mb-2 tracking-wide">Velocidad Máxima</h6>
+            <h4 class="mb-2 fw-light">250 km/h</h4>
+            <div class="progress bg-dark">
+              <div class="progress-bar bg-light barra-velocidad"></div>
+            </div>
+          </div>
         </div>
-        <div class="especs-maybach-tarjeta tarjeta-izq">
-          <p>TRACCIÓN</p>
-          <p>INTEGRAL (4MATIC)</p>
+
+        <div class="card tarjeta-izq bg-black text-white border border-secondary rounded-4 shadow">
+          <div class="card-body text-center py-4">
+            <i class="fas fa-car"></i>
+            <h6 class="text-uppercase text-secondary fw-bold mb-2 tracking-wide">Tracción</h6>
+            <h4 class="mb-0 fw-light">Integral (4MATIC)</h4>
+          </div>
         </div>
+
       </div>
 
-      <div class="especs-maybach-imagen" id="especs-maybach-imagen">
-        <img src="/src/assets/images/david/coche.png" alt="Coche">
+      <div class="especs-maybach-imagen px-3 position-relative d-flex justify-content-center align-items-center" id="especs-maybach-imagen">
+        <div class="foco-luz-coche position-absolute"></div>
+        <img src="/src/assets/images/david/coche.png" alt="Coche" class="w-100 d-block position-relative">
       </div>
 
-      <div class="especs-maybach-tecnicas" id="tarjetas-der">
-        <div class="especs-maybach-tarjeta tarjeta-der">
-          <p>600 CV</p>
+      <div class="especs-maybach-tecnicas w-25 d-flex flex-column p-4 gap-4" id="tarjetas-der">
+        
+        <div class="card tarjeta-der bg-black text-white border border-secondary rounded-4 shadow">
+          <div class="card-body text-center py-4">
+            <i class="fas fa-horse-head"></i>
+            <h6 class="text-uppercase text-secondary fw-bold mb-2 tracking-wide">Potencia Máxima</h6>
+            <h4 class="mb-2 fw-light">600 CV</h4>
+            <div class="progress bg-dark">
+              <div class="progress-bar bg-light barra-potencia"></div>
+            </div>
+          </div>
         </div>
-        <div class="especs-maybach-tarjeta tarjeta-der">
-          <p>DE 0 A 100</p>
-          <p>4,5s</p>
+
+        <div class="card tarjeta-der bg-black text-white border border-secondary rounded-4 shadow">
+          <div class="card-body text-center py-4">
+            <i class="fas fa-stopwatch"></i>
+            <h6 class="text-uppercase text-secondary fw-bold mb-2 tracking-wide">De 0 a 100 km/h</h6>
+            <h4 class="mb-2 fw-light">4,5 s</h4>
+            <div class="progress bg-dark">
+              <div class="progress-bar bg-light barra-aceleracion"></div>
+            </div>
+          </div>
         </div>
+
       </div>
     </section>
 
