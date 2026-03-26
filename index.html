@@ -8,8 +8,8 @@
   <title>Proyecto DIW - Roberto, David e Iván</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <script type="module" crossorigin src="/ProyectoDIW/assets/index-C2mUdv8O.js"></script>
-  <link rel="stylesheet" crossorigin href="/ProyectoDIW/assets/index-C3tNWNvH.css">
+  <script type="module" crossorigin src="/ProyectoDIW/assets/index-CsCRhc6w.js"></script>
+  <link rel="stylesheet" crossorigin href="/ProyectoDIW/assets/index-B03Q-Het.css">
 </head>
 
 <body>
@@ -36,53 +36,45 @@
     </div>
   </nav>
 
-  <section id="inicio" class="premium-carousel vh-100 position-relative overflow-hidden">
-    <div class="carousel-inner h-100">
-
-      <!-- Slide 1 -->
-      <div class="carousel-slide active h-100 w-100 position-absolute top-0 start-0">
-        <div class="slide-image" style="background-image: url('./assets/images/carousel/front.png');"></div>
-        <div
-          class="container h-100 d-flex flex-column justify-content-center align-items-center text-center text-white z-1 position-relative">
-          <h1 class="display-2 fw-bold slide-title mb-3">Concesionario <span class="text-gold">Guti</span></h1>
-          <p class="lead slide-subtitle fs-4 mb-5">El epítome del lujo y la distinción en cada detalle.</p>
+  <section id="inicio">
+    <div id="carouselExampleDark" class="carousel slide vh-100" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner h-100">
+        <div class="carousel-item active h-100" data-bs-interval="4000">
+          <img src="./assets/images/carousel/front.png" class="d-block w-100 h-100 object-fit-cover" alt="Front view">
+          <div class="carousel-caption d-none d-md-block bg-black bg-opacity-50 rounded-5 p-5 mb-5 mx-auto" style="max-width: 800px;">
+            <h1 class="display-2 fw-bold text-white mb-3">Concesionario <span class="text-gold">Guti</span></h1>
+            <p class="lead text-white fs-4">El epítome del lujo y la distinción en cada detalle.</p>
+          </div>
         </div>
-        <div class="slide-overlay"></div>
-      </div>
-
-      <!-- Slide 2 -->
-      <div class="carousel-slide h-100 w-100 position-absolute top-0 start-0" style="display: none;">
-        <div class="slide-image" style="background-image: url('./assets/images/carousel/interior.png');"></div>
-        <div
-          class="container h-100 d-flex flex-column justify-content-center align-items-center text-center text-white z-1 position-relative">
-          <h1 class="display-2 fw-bold slide-title mb-3">Interiores <span class="text-gold">Majestuosos</span></h1>
-          <p class="lead slide-subtitle fs-4 mb-5">Diseñados meticulosamente para su máximo confort.</p>
+        <div class="carousel-item h-100" data-bs-interval="4000">
+          <img src="./assets/images/carousel/interior.png" class="d-block w-100 h-100 object-fit-cover" alt="Interior view">
+          <div class="carousel-caption d-none d-md-block bg-black bg-opacity-50 rounded-5 p-5 mb-5 mx-auto" style="max-width: 800px;">
+            <h1 class="display-2 fw-bold text-white mb-3">Interiores <span class="text-gold">Majestuosos</span></h1>
+            <p class="lead text-white fs-4">Diseñados meticulosamente para su máximo confort.</p>
+          </div>
         </div>
-        <div class="slide-overlay"></div>
-      </div>
-
-      <!-- Slide 3 -->
-      <div class="carousel-slide h-100 w-100 position-absolute top-0 start-0" style="display: none;">
-        <div class="slide-image" style="background-image: url('./assets/images/carousel/steering.png');"></div>
-        <div
-          class="container h-100 d-flex flex-column justify-content-center align-items-center text-center text-white z-1 position-relative">
-          <h1 class="display-2 fw-bold slide-title mb-3">Tecnología de <span class="text-gold">Vanguardia</span></h1>
-          <p class="lead slide-subtitle fs-4 mb-5">Innovación continua para una experiencia de conducción única.</p>
+        <div class="carousel-item h-100">
+          <img src="./assets/images/carousel/steering.png" class="d-block w-100 h-100 object-fit-cover" alt="Steering wheel">
+          <div class="carousel-caption d-none d-md-block bg-black bg-opacity-50 rounded-5 p-5 mb-5 mx-auto" style="max-width: 800px;">
+            <h1 class="display-2 fw-bold text-white mb-3">Tecnología de <span class="text-gold">Vanguardia</span></h1>
+            <p class="lead text-white fs-4">Innovación continua para una experiencia de conducción única.</p>
+          </div>
         </div>
-        <div class="slide-overlay"></div>
       </div>
-
-
-    </div>
-
-    <!-- Carousel -->
-    <div
-      class="carousel-nav position-absolute bottom-0 start-0 w-100 p-5 d-flex justify-content-center align-items-end z-3">
-      <div class="carousel-indicators-custom d-flex gap-3">
-        <div class="indicator active" data-index="0"></div>
-        <div class="indicator" data-index="1"></div>
-        <div class="indicator" data-index="2"></div>
-      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
   </section>
 
@@ -363,7 +355,4 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </body>
-
-
-
 </html>
