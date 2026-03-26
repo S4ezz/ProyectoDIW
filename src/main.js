@@ -57,66 +57,6 @@ window.addEventListener('load', () => {
         });
     });
 
-    // Carousel
-    const slides = gsap.utils.toArray('.carousel-slide');
-    const indicators = gsap.utils.toArray('.indicator');
-    let currentIndex = 0;
-    let isAnimating = false;
-
-    // Preparamos los slides
-    gsap.set(slides, { display: 'block', opacity: 0, zIndex: 1, xPercent: 0, clipPath: 'inset(0 0 0 0%)' });
-    if (slides[0]) gsap.set(slides[0], { opacity: 1, zIndex: 10 });
-
-    function gotoSlide(index, direction = 1) {
-        if (isAnimating || index === currentIndex) return;
-        isAnimating = true;
-
-        const oldSlide = slides[currentIndex];
-        const newSlide = slides[index];
-
-        indicators.forEach(ind => ind.classList.remove('active'));
-        if (indicators[index]) indicators[index].classList.add('active');
-
-        const title = newSlide.querySelector('.slide-title');
-        const subtitle = newSlide.querySelector('.slide-subtitle');
-        const cta = newSlide.querySelector('.slide-cta');
-
-        gsap.set(newSlide, {
-            opacity: 1,
-            zIndex: 30,
-            xPercent: direction > 0 ? 100 : -100,
-            clipPath: direction > 0 ? 'inset(0 0 0 100%)' : 'inset(0 100% 0 0%)'
-        });
-
-        gsap.set([title, subtitle, cta], { opacity: 0, x: direction > 0 ? 50 : -50 });
-
-        const tl = gsap.timeline({
-            defaults: { duration: 1.1, ease: 'expo.inOut' },
-            onComplete: () => {
-                slides.forEach((s, sIdx) => { if (sIdx !== index) gsap.set(s, { opacity: 0, zIndex: 1 }); });
-                gsap.set(newSlide, { zIndex: 10, clearProps: 'xPercent,clipPath' });
-                isAnimating = false;
-                currentIndex = index;
-            }
-        });
-
-        tl.to(newSlide, { xPercent: 0, clipPath: 'inset(0 0 0 0%)' });
-        tl.to(oldSlide, { xPercent: direction > 0 ? -100 : 100, opacity: 0 }, 0);
-        tl.to([title, subtitle, cta], { x: 0, opacity: 1, stagger: 0.1, duration: 0.7, ease: 'power2.out' }, '-=0.5');
-    }
-
-    indicators.forEach((indicator, i) => {
-        indicator.addEventListener('click', () => {
-            gotoSlide(i, i > currentIndex ? 1 : -1);
-            clearInterval(autoPlay);
-        });
-    });
-
-    let autoPlay = setInterval(() => {
-        let nextIdx = (currentIndex + 1) % slides.length;
-        gotoSlide(nextIdx, 1);
-    }, 10000);
-
 
     // David
     gsap.set("#especs-maybach-imagen", { opacity: 0, x: -300, scale: 1.5 });
