@@ -1,14 +1,11 @@
 import './style.css'
 
-// REGISTRAMOS LOS PLUGINS DE GSAP
 gsap.registerPlugin(ScrollTrigger);
 
 // Función que se ejecuta cuando TODO (incluyendo imágenes) ha cargado
 window.addEventListener('load', () => {
 
-    // ---------------------------------------------------------
-    // 1. NAV BAR Y NAVEGACIÓN
-    // ---------------------------------------------------------
+    // Navbar
 
     // Animación de entrada del logo
     gsap.to('.navbar-logo', {
@@ -50,7 +47,7 @@ window.addEventListener('load', () => {
                     top: posicion - 70,
                     behavior: 'smooth'
                 });
-                
+
                 // Cerramos menú móvil si está abierto
                 const menu = document.getElementById('navbarLuxe');
                 if (menu && menu.classList.contains('show')) {
@@ -60,9 +57,7 @@ window.addEventListener('load', () => {
         });
     });
 
-    // ---------------------------------------------------------
-    // 2. CARRUSEL PRINCIPAL (INICIO)
-    // ---------------------------------------------------------
+    // Carousel
     const slides = gsap.utils.toArray('.carousel-slide');
     const indicators = gsap.utils.toArray('.indicator');
     let currentIndex = 0;
@@ -78,21 +73,21 @@ window.addEventListener('load', () => {
 
         const oldSlide = slides[currentIndex];
         const newSlide = slides[index];
-        
+
         indicators.forEach(ind => ind.classList.remove('active'));
         if (indicators[index]) indicators[index].classList.add('active');
-        
+
         const title = newSlide.querySelector('.slide-title');
         const subtitle = newSlide.querySelector('.slide-subtitle');
         const cta = newSlide.querySelector('.slide-cta');
-        
-        gsap.set(newSlide, { 
-            opacity: 1, 
-            zIndex: 30, 
+
+        gsap.set(newSlide, {
+            opacity: 1,
+            zIndex: 30,
             xPercent: direction > 0 ? 100 : -100,
             clipPath: direction > 0 ? 'inset(0 0 0 100%)' : 'inset(0 100% 0 0%)'
         });
-        
+
         gsap.set([title, subtitle, cta], { opacity: 0, x: direction > 0 ? 50 : -50 });
 
         const tl = gsap.timeline({
@@ -123,9 +118,7 @@ window.addEventListener('load', () => {
     }, 10000);
 
 
-    // ---------------------------------------------------------
-    // 3. SECCIÓN DE DAVID (ESPECIFICACIONES)
-    // ---------------------------------------------------------
+    // David
     gsap.set("#especs-maybach-imagen", { opacity: 0, x: -300, scale: 1.5 });
     gsap.set(".tarjeta-der", { opacity: 0, x: 50, rotationY: 90 });
     gsap.set(".tarjeta-izq", { opacity: 0, x: -50, rotationY: -90 });
@@ -143,18 +136,16 @@ window.addEventListener('load', () => {
     });
 
     davidTl.to("#especs-maybach-imagen", { opacity: 1, duration: 2 })
-           .to(".tarjeta-der", { opacity: 1, x: 0, rotationY: 0, duration: 2, stagger: 1 })
-           .to(".barra-potencia", { width: "100%", duration: 1.5 })
-           .to(".barra-aceleracion", { width: "80%", duration: 1.5 })
-           .to(".foco-luz-coche", { opacity: 1, scale: 1.2, duration: 2 }, "-=1")
-           .to("#especs-maybach-imagen", { x: 0, scale: 1, duration: 2 })
-           .to(".tarjeta-izq", { opacity: 1, x: 0, rotationY: 0, duration: 2, stagger: 1 })
-           .to(".barra-velocidad", { width: "95%", duration: 1.5 });
+        .to(".tarjeta-der", { opacity: 1, x: 0, rotationY: 0, duration: 2, stagger: 1 })
+        .to(".barra-potencia", { width: "100%", duration: 1.5 })
+        .to(".barra-aceleracion", { width: "80%", duration: 1.5 })
+        .to(".foco-luz-coche", { opacity: 1, scale: 1.2, duration: 2 }, "-=1")
+        .to("#especs-maybach-imagen", { x: 0, scale: 1, duration: 2 })
+        .to(".tarjeta-izq", { opacity: 1, x: 0, rotationY: 0, duration: 2, stagger: 1 })
+        .to(".barra-velocidad", { width: "95%", duration: 1.5 });
 
 
-    // ---------------------------------------------------------
-    // 4. SECCIÓN DE ROBERTO (EXTRAS)
-    // ---------------------------------------------------------
+    // Roberto
     const introRobertoTl = gsap.timeline({
         scrollTrigger: {
             trigger: "#roberto-intro",
@@ -164,7 +155,7 @@ window.addEventListener('load', () => {
     });
 
     introRobertoTl.from(".roberto-title", { y: 50, opacity: 0, duration: 1, ease: "power3.out" })
-                  .from(".roberto-subtitle", { y: 30, opacity: 0, duration: 0.8, ease: "power3.out" }, "-=0.6");
+        .from(".roberto-subtitle", { y: 30, opacity: 0, duration: 0.8, ease: "power3.out" }, "-=0.6");
 
     const robertoSteps = gsap.utils.toArray(".roberto-step");
     if (robertoSteps.length > 0) {
@@ -192,9 +183,7 @@ window.addEventListener('load', () => {
     }
 
 
-    // ---------------------------------------------------------
-    // 5. SECCIÓN DE IVÁN (PAGO)
-    // ---------------------------------------------------------
+    // Iván
     const ivanHeaderTl = gsap.timeline({
         scrollTrigger: {
             trigger: ".maybach-section",
@@ -205,14 +194,14 @@ window.addEventListener('load', () => {
     });
 
     ivanHeaderTl.fromTo(".maybach-header h1", { y: -50, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 1, ease: "power3.out" })
-                .fromTo(".maybach-header p", { y: 30, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 1, ease: "power3.out" }, "-=0.7");
+        .fromTo(".maybach-header p", { y: 30, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 1, ease: "power3.out" }, "-=0.7");
 
     gsap.fromTo(".maybach-header h1", { color: "#9ca3af" }, {
         color: "#1a1a1a", ease: "none",
         scrollTrigger: { trigger: ".maybach-section", start: "top 70%", end: "top 10%", scrub: true }
     });
 
-    gsap.fromTo(".maybach-img", 
+    gsap.fromTo(".maybach-img",
         { y: -150, x: () => (window.innerWidth >= 992 ? "25vw" : "0"), scale: 1.6 },
         {
             y: 0, x: 0, scale: 1, ease: "power2.inOut",
@@ -225,14 +214,11 @@ window.addEventListener('load', () => {
     });
 
     ivanContentTl.fromTo(".car-details .card-body", { x: -60, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 1 }, 0)
-                 .fromTo(".payment-details", { x: 60, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 1 }, 0)
-                 .fromTo(".payment-method", { y: 20, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.5, stagger: 0.15, ease: "back.out(1.5)" }, "-=0.4")
-                 .fromTo(".payment-field", { x: 20, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 0.5, stagger: 0.1, ease: "power2.out" }, "-=0.2")
-                 .fromTo(".confirm-btn", { scale: 0.9, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, duration: 0.6, ease: "elastic.out(1, 0.7)" }, "-=0.1")
-                 .fromTo(".secure-info", { y: 10, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.6 }, "-=0.3");
+        .fromTo(".payment-details", { x: 60, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 1 }, 0)
+        .fromTo(".payment-method", { y: 20, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.5, stagger: 0.15, ease: "back.out(1.5)" }, "-=0.4")
+        .fromTo(".payment-field", { x: 20, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 0.5, stagger: 0.1, ease: "power2.out" }, "-=0.2")
+        .fromTo(".confirm-btn", { scale: 0.9, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, duration: 0.6, ease: "elastic.out(1, 0.7)" }, "-=0.1")
+        .fromTo(".secure-info", { y: 10, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.6 }, "-=0.3");
 
-    // ---------------------------------------------------------
-    // REFRESH FINAL (Crucial para Github Pages)
-    // ---------------------------------------------------------
     ScrollTrigger.refresh();
 });
