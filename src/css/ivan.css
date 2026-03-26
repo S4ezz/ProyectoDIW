@@ -1,0 +1,108 @@
+.maybach-section {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #ffffff, #eaeaea);
+  display: flex;
+  align-items: center;
+  padding: 80px 0;
+  border-top: 1px solid #ddd;
+}
+
+/* Efectos en las tarjetas */
+.maybach-section .card {
+  border-radius: 12px;
+  /* overflow: hidden; COMENTADO: Permitimos que la imagen vuele por encima y fuera de la tarjeta al inicio de la animacion */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.maybach-section .card:hover {
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15) !important;
+}
+
+.maybach-section .car-details .card {
+  background: linear-gradient(145deg, #111, #222) !important;
+}
+
+/* Imagen del coche */
+.maybach-img {
+  width: 100%;
+  display: block;
+  border-radius: 12px 12px 0 0;
+  position: relative;
+  z-index: 20; /* Aseguramos que vuele por encima de todo el texto */
+}
+
+/* Estilos de los inputs */
+.maybach-section .form-control {
+  border-radius: 8px;
+  background-color: #f3f4f6 !important;
+  transition: all 0.3s ease;
+}
+
+.maybach-section .form-control:focus {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.05);
+  background-color: #fff !important;
+  transform: translateY(-2px);
+}
+
+/* Logo metodos de pago */
+.maybach-section .payment-method {
+  transition: all 0.3s ease;
+  background-color: #f8f9fa;
+  border-color: #dee2e6;
+  color: #212529;
+}
+
+.maybach-section .payment-method:hover {
+  background-color: #e9ecef;
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.maybach-section .payment-method.active {
+  background-color: #212529 !important;
+  color: white !important;
+  border-color: #212529 !important;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.maybach-section .payment-method.active svg {
+  fill: white !important;
+}
+
+.maybach-section .payment-method.active:hover {
+  background-color: #343a40 !important;
+  transform: translateY(-5px);
+}
+
+/* Boton Confirmar */
+.maybach-section .confirm-btn {
+  --bs-btn-bg: transparent;
+  --bs-btn-hover-bg: transparent;
+  --bs-btn-active-bg: transparent;
+  --bs-btn-border-color: transparent;
+  background: linear-gradient(45deg, #1a1a1a, #333333) !important;
+  border: none !important;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.maybach-section .confirm-btn::after {
+  content: "";
+  position: absolute;
+  top: 0; left: -100%;
+  width: 50%; height: 100%;
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
+  transform: skewX(-25deg);
+  transition: all 0.5s ease;
+}
+
+.maybach-section .confirm-btn:hover {
+  background: linear-gradient(45deg, #333333, #555555);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  transform: translateY(-2px);
+}
+
+.maybach-section .confirm-btn:hover::after {
+  left: 150%;
+}
