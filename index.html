@@ -16,14 +16,84 @@
 </head>
 
 <body>
-  <section id="persona1" class="seccion-equipo bg-light text-dark">
-    <div class="container text-center">
-      <h1 class="display-4 fw-bold text-dark">Concesionario Guti</h1>
-      <p class="lead">Proyecto DIW sobre animaciones con GSAP y ScrollTrigger.</p>
+  <nav class="navbar navbar-expand-lg premium-navbar p-3 fixed-top transition-all">
+    <div class="container">
+      <div class="navbar-logo">
+        <a href="#inicio" class="text-white text-decoration-none fw-bold tracking-widest fs-4"><span
+            class="text-logo-grey">CONCESIONARIO</span> <span class="text-gold">GUTI</span></a>
+      </div>
+
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarLuxe" aria-controls="navbarLuxe" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa-solid fa-bars-staggered text-white fs-3"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarLuxe">
+        <div class="navbar-nav gap-lg-4 mt-3 mt-lg-0">
+          <a href="#inicio" class="nav-link-premium">INICIO</a>
+          <a href="#david-especs" class="nav-link-premium">ESPECIFICACIONES</a>
+          <a href="#roberto-intro" class="nav-link-premium">EXTRAS</a>
+          <a href="#persona4" class="nav-link-premium">PAGO</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section id="inicio" class="premium-carousel vh-100 position-relative overflow-hidden">
+    <div class="carousel-inner h-100">
+
+      <!-- Slide 1 -->
+      <div class="carousel-slide active h-100 w-100 position-absolute top-0 start-0">
+        <div class="slide-image" style="background-image: url('/src/assets/images/carousel/front.png');"></div>
+        <div
+          class="container h-100 d-flex flex-column justify-content-center align-items-center text-center text-white z-1 position-relative">
+          <h1 class="display-2 fw-bold slide-title mb-3">Concesionario <span class="text-gold">Guti</span></h1>
+          <p class="lead slide-subtitle fs-4 mb-5">El epítome del lujo y la distinción en cada detalle.</p>
+        </div>
+        <div class="slide-overlay"></div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-slide h-100 w-100 position-absolute top-0 start-0" style="display: none;">
+        <div class="slide-image" style="background-image: url('/src/assets/images/carousel/interior.png');"></div>
+        <div
+          class="container h-100 d-flex flex-column justify-content-center align-items-center text-center text-white z-1 position-relative">
+          <h1 class="display-2 fw-bold slide-title mb-3">Interiores <span class="text-gold">Majestuosos</span></h1>
+          <p class="lead slide-subtitle fs-4 mb-5">Diseñados meticulosamente para su máximo confort.</p>
+        </div>
+        <div class="slide-overlay"></div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-slide h-100 w-100 position-absolute top-0 start-0" style="display: none;">
+        <div class="slide-image" style="background-image: url('/src/assets/images/carousel/steering.png');"></div>
+        <div
+          class="container h-100 d-flex flex-column justify-content-center align-items-center text-center text-white z-1 position-relative">
+          <h1 class="display-2 fw-bold slide-title mb-3">Tecnología de <span class="text-gold">Vanguardia</span></h1>
+          <p class="lead slide-subtitle fs-4 mb-5">Innovación continua para una experiencia de conducción única.</p>
+        </div>
+        <div class="slide-overlay"></div>
+      </div>
+
+
+    </div>
+
+    <!-- Carousel Controls -->
+    <div
+      class="carousel-nav position-absolute bottom-0 start-0 w-100 p-5 d-flex justify-content-center align-items-end z-3">
+      <div class="carousel-indicators-custom d-flex gap-3">
+        <div class="indicator active" data-index="0"></div>
+        <div class="indicator" data-index="1"></div>
+        <div class="indicator" data-index="2"></div>
+      </div>
     </div>
   </section>
+
+
   <!-- David -->
-  <section class="especs-maybach-section vh-100 d-flex align-items-center justify-content-between py-5 bg-dark">
+  <section id="david-especs"
+    class="especs-maybach-section vh-100 d-flex align-items-center justify-content-between py-5 bg-dark">
+
     <div class="especs-maybach-tecnicas w-25 d-flex flex-column p-4 gap-4" id="tarjetas-izq">
 
       <div class="card tarjeta-izq bg-black text-white border border-secondary rounded-4 shadow">
@@ -95,7 +165,8 @@
     <div class="container z-1 position-relative">
       <h1 class="display-1 fw-light mb-4 roberto-title tracking-widest text-uppercase">Extras</h1>
       <p class="lead fw-light text-secondary roberto-subtitle mx-auto" style="max-width: 700px; opacity: 0.8;">
-        Eleva tu experiencia de conducción al siguiente nivel. <br> Descubre las opciones de lujo diseñadas meticulosamente para ti.
+        Eleva tu experiencia de conducción al siguiente nivel. <br> Descubre las opciones de lujo diseñadas
+        meticulosamente para ti.
       </p>
     </div>
   </section>
@@ -123,8 +194,6 @@
             <div class="col-lg-5 col-md-8">
               <div class="card roberto-card bg-black text-white border border-secondary rounded-4 shadow">
                 <div class="card-body text-center py-5">
-                  <i class="fas fa-star mb-3 fs-3 text-secondary"></i>
-                  <h6 class="text-uppercase text-secondary fw-bold mb-2 tracking-wide">Iluminación</h6>
                   <h4 class="display-6 fw-light mb-3">Cielo Estrellado</h4>
                   <p class="fs-6 fw-light text-secondary mb-0 px-4">Cientos de puntos de luz LED que replican la
                     grandiosidad de un cielo estrellado a la perfección.</p>
@@ -141,8 +210,6 @@
             <div class="col-lg-5 col-md-8">
               <div class="card roberto-card bg-black text-white border border-secondary rounded-4 shadow">
                 <div class="card-body text-center py-5">
-                  <i class="fas fa-circle-notch mb-3 fs-3 text-secondary"></i>
-                  <h6 class="text-uppercase text-secondary fw-bold mb-2 tracking-wide">Exterior</h6>
                   <h4 class="display-6 fw-light mb-3">Llantas de Aleación</h4>
                   <p class="fs-6 fw-light text-secondary mb-0 px-4">Diseño aerodinámico y materiales forjados para el
                     éxito y una presencia imponente.</p>
@@ -159,8 +226,6 @@
             <div class="col-lg-8">
               <div class="card roberto-card bg-black text-white border border-secondary rounded-4 shadow">
                 <div class="card-body text-center py-5">
-                  <i class="fas fa-plus mb-3 fs-3 text-secondary"></i>
-                  <h6 class="text-uppercase text-secondary fw-bold mb-2 tracking-wide">Personalización</h6>
                   <h4 class="display-5 fw-light mb-4">A un paso de la perfección</h4>
                   <p class="fs-5 fw-light text-secondary mb-5 px-5">El sumun del lujo reside en los pequeños detalles.
                     Existen infinitas posibilidades esperando ser encontradas.</p>
@@ -179,106 +244,132 @@
 
   </section>
 
-    <!-- Ivan -->
-    <section id="persona4" class="maybach-section">
-      <div class="container py-5">
-        <div class="text-center mb-5 maybach-header">
-          <h1 class="display-3 fw-bold text-uppercase tracking-wide">Mercedes-Maybach</h1>
-          <p class="lead text-muted">Complete su reserva de la Clase S</p>
-        </div>
-        
-        <div class="row g-5">
-          <!-- Detalles del Vehículo -->
-          <div class="col-lg-6 car-details">
-            <div class="card bg-dark text-white border-0 shadow-lg h-100">
-              <img src="./src/assets/images/ivan/mercedes-maybach-mercedes-benz-s-class-luxury-vehicle-vip-rent-a-car-651e5f392e9ddc9d093e2b4152dd1348.png" class="card-img-top maybach-img" alt="Mercedes-Maybach S-Class" style="object-fit: cover; max-height: 400px; object-position: center;">
-              <div class="card-body p-5">
-                <h3 class="card-title fw-bold mb-4 serif">Maybach S 680 4MATIC</h3>
-                <ul class="list-unstyled mb-4">
-                  <li class="d-flex justify-content-between border-bottom border-secondary pb-3 mb-3">
-                    <span class="text-white-50">Motor</span>
-                    <span>V12 Biturbo de 6.0L</span>
-                  </li>
-                  <li class="d-flex justify-content-between border-bottom border-secondary pb-3 mb-3">
-                    <span class="text-white-50">Potencia</span>
-                    <span>600 CV</span>
-                  </li>
-                  <li class="d-flex justify-content-between border-bottom border-secondary pb-3 mb-3">
-                    <span class="text-white-50">Color Exterior</span>
-                    <span>Bicolor Negro Obsidiana / Plata High-Tech</span>
-                  </li>
-                  <li class="d-flex justify-content-between pb-3">
-                    <span class="text-white-50">Precio Base</span>
-                    <span class="fs-4 fw-bold text-white">255.000 €</span>
-                  </li>
-                </ul>
-              </div>
+  <!-- Ivan -->
+  <section id="persona4" class="maybach-section">
+    <div class="container py-5">
+      <div class="text-center mb-5 maybach-header">
+        <h1 class="display-3 fw-bold text-uppercase tracking-wide">Mercedes-Maybach</h1>
+        <p class="lead text-muted">Complete su reserva de la Clase S</p>
+      </div>
+
+      <div class="row g-5">
+        <!-- Detalles del Vehículo -->
+        <div class="col-lg-6 car-details">
+          <div class="card bg-dark text-white border-0 shadow-lg h-100">
+            <img
+              src="./src/assets/images/ivan/mercedes-maybach-mercedes-benz-s-class-luxury-vehicle-vip-rent-a-car-651e5f392e9ddc9d093e2b4152dd1348.png"
+              class="card-img-top maybach-img" alt="Mercedes-Maybach S-Class"
+              style="object-fit: cover; max-height: 400px; object-position: center;">
+            <div class="card-body p-5">
+              <h3 class="card-title fw-bold mb-4 serif">Maybach S 680 4MATIC</h3>
+              <ul class="list-unstyled mb-4">
+                <li class="d-flex justify-content-between border-bottom border-secondary pb-3 mb-3">
+                  <span class="text-white-50">Motor</span>
+                  <span>V12 Biturbo de 6.0L</span>
+                </li>
+                <li class="d-flex justify-content-between border-bottom border-secondary pb-3 mb-3">
+                  <span class="text-white-50">Potencia</span>
+                  <span>600 CV</span>
+                </li>
+                <li class="d-flex justify-content-between border-bottom border-secondary pb-3 mb-3">
+                  <span class="text-white-50">Color Exterior</span>
+                  <span>Bicolor Negro Obsidiana / Plata High-Tech</span>
+                </li>
+                <li class="d-flex justify-content-between pb-3">
+                  <span class="text-white-50">Precio Base</span>
+                  <span class="fs-4 fw-bold text-white">255.000 €</span>
+                </li>
+              </ul>
             </div>
           </div>
+        </div>
 
-          <!-- Formulario de Pago -->
-          <div class="col-lg-6 payment-details">
-            <div class="card border-0 shadow-lg h-100">
-              <div class="card-body p-5">
-                <h4 class="mb-4 fw-bold border-bottom pb-3 serif">Resumen de Pago</h4>
-                
-                <h6 class="mb-3 text-secondary text-uppercase tracking-wide" style="letter-spacing: 1px;">Método de Pago</h6>
-                <div class="payment-methods d-flex flex-column flex-sm-row gap-3 mb-4">
-                  <div class="payment-method border rounded p-3 text-center flex-fill active" style="cursor: pointer;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-credit-card mb-2" viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/><path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/></svg>
-                    <small class="fw-bold d-block">Tarjeta</small>
+        <!-- Formulario de Pago -->
+        <div class="col-lg-6 payment-details">
+          <div class="card border-0 shadow-lg h-100">
+            <div class="card-body p-5">
+              <h4 class="mb-4 fw-bold border-bottom pb-3 serif">Resumen de Pago</h4>
+
+              <h6 class="mb-3 text-secondary text-uppercase tracking-wide" style="letter-spacing: 1px;">Método de Pago
+              </h6>
+              <div class="payment-methods d-flex flex-column flex-sm-row gap-3 mb-4">
+                <div class="payment-method border rounded p-3 text-center flex-fill active" style="cursor: pointer;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                    class="bi bi-credit-card mb-2" viewBox="0 0 16 16">
+                    <path
+                      d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z" />
+                    <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z" />
+                  </svg>
+                  <small class="fw-bold d-block">Tarjeta</small>
+                </div>
+                <div class="payment-method border rounded p-3 text-center flex-fill" style="cursor: pointer;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                    class="bi bi-paypal mb-2 text-primary" viewBox="0 0 16 16">
+                    <path
+                      d="M14.06 3.713c.12-1.071-.464-1.794-1.554-2.074-1.078-.276-2.583-.242-4.148-.22-1.298.018-2.612.036-3.864.036-1.503 0-2.091.737-2.31 2.22l-1.378 9.351h2.956c.264 0 .498-.184.542-.444l.872-5.112c.046-.271.293-.466.568-.466h1.22c3.166 0 5.432-1.282 5.968-4.305.124-.698.058-1.516-.36-2.181-.22-.35-.55-.63-.912-.805Zm-4.8 5.419c-1.52.002-3.235.002-4.131.002-.1 0-.173.07-.158.17l-.804 5.397c-.035.234.148.435.385.435h2.516c.241 0 .45-.19.492-.429l.865-5.013c.043-.243.25-.429.497-.429a3.834 3.834 0 0 0 .338-.003Z" />
+                  </svg>
+                  <small class="fw-bold d-block">PayPal</small>
+                </div>
+                <div class="payment-method border rounded p-3 text-center flex-fill" style="cursor: pointer;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                    class="bi bi-bank mb-2 text-success" viewBox="0 0 16 16">
+                    <path
+                      d="M8 .95 14.61 4h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 14V7H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 4h.89L8 .95zM3.777 3h8.447L8 1.258 3.777 3zM2 7v7h1V7H2zm2 0v7h2.5V7H4zm3.5 0v7h1V7h-1zm2 0v7H12V7H9.5zM13 7v7h1V7h-1zm2-1V5H1v1h14zm-.39 9H1.39l-.25 1h13.72l-.25-1z" />
+                  </svg>
+                  <small class="fw-bold d-block">Banco</small>
+                </div>
+              </div>
+
+              <form class="payment-form">
+                <div class="mb-3 payment-field">
+                  <label class="form-label text-muted small fw-bold">Nombre en la tarjeta</label>
+                  <input type="text" class="form-control form-control-lg border-0 shadow-none bg-light"
+                    placeholder="IVAN PEREZ">
+                </div>
+                <div class="mb-3 payment-field">
+                  <label class="form-label text-muted small fw-bold">Número de tarjeta</label>
+                  <input type="text" class="form-control form-control-lg border-0 shadow-none bg-light"
+                    placeholder="0000 0000 0000 0000">
+                </div>
+                <div class="row mb-4 payment-field">
+                  <div class="col-6">
+                    <label class="form-label text-muted small fw-bold">Caducidad</label>
+                    <input type="text" class="form-control form-control-lg border-0 shadow-none bg-light"
+                      placeholder="MM/YY">
                   </div>
-                  <div class="payment-method border rounded p-3 text-center flex-fill" style="cursor: pointer;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-paypal mb-2 text-primary" viewBox="0 0 16 16"><path d="M14.06 3.713c.12-1.071-.464-1.794-1.554-2.074-1.078-.276-2.583-.242-4.148-.22-1.298.018-2.612.036-3.864.036-1.503 0-2.091.737-2.31 2.22l-1.378 9.351h2.956c.264 0 .498-.184.542-.444l.872-5.112c.046-.271.293-.466.568-.466h1.22c3.166 0 5.432-1.282 5.968-4.305.124-.698.058-1.516-.36-2.181-.22-.35-.55-.63-.912-.805Zm-4.8 5.419c-1.52.002-3.235.002-4.131.002-.1 0-.173.07-.158.17l-.804 5.397c-.035.234.148.435.385.435h2.516c.241 0 .45-.19.492-.429l.865-5.013c.043-.243.25-.429.497-.429a3.834 3.834 0 0 0 .338-.003Z"/></svg>
-                    <small class="fw-bold d-block">PayPal</small>
-                  </div>
-                  <div class="payment-method border rounded p-3 text-center flex-fill" style="cursor: pointer;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-bank mb-2 text-success" viewBox="0 0 16 16"><path d="M8 .95 14.61 4h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 14V7H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 4h.89L8 .95zM3.777 3h8.447L8 1.258 3.777 3zM2 7v7h1V7H2zm2 0v7h2.5V7H4zm3.5 0v7h1V7h-1zm2 0v7H12V7H9.5zM13 7v7h1V7h-1zm2-1V5H1v1h14zm-.39 9H1.39l-.25 1h13.72l-.25-1z"/></svg>
-                    <small class="fw-bold d-block">Banco</small>
+                  <div class="col-6">
+                    <label class="form-label text-muted small fw-bold">CVC</label>
+                    <input type="text" class="form-control form-control-lg border-0 shadow-none bg-light"
+                      placeholder="123">
                   </div>
                 </div>
+                <button type="button" class="btn btn-dark w-100 btn-lg py-3 fw-bold confirm-btn text-uppercase"
+                  style="letter-spacing: 2px; border-radius: 8px;">
+                  Confirmar Reserva — 255.000 €
+                </button>
+              </form>
 
-                <form class="payment-form">
-                  <div class="mb-3 payment-field">
-                    <label class="form-label text-muted small fw-bold">Nombre en la tarjeta</label>
-                    <input type="text" class="form-control form-control-lg border-0 shadow-none bg-light" placeholder="IVAN PEREZ">
-                  </div>
-                  <div class="mb-3 payment-field">
-                    <label class="form-label text-muted small fw-bold">Número de tarjeta</label>
-                    <input type="text" class="form-control form-control-lg border-0 shadow-none bg-light" placeholder="0000 0000 0000 0000">
-                  </div>
-                  <div class="row mb-4 payment-field">
-                    <div class="col-6">
-                      <label class="form-label text-muted small fw-bold">Caducidad</label>
-                      <input type="text" class="form-control form-control-lg border-0 shadow-none bg-light" placeholder="MM/YY">
-                    </div>
-                    <div class="col-6">
-                      <label class="form-label text-muted small fw-bold">CVC</label>
-                      <input type="text" class="form-control form-control-lg border-0 shadow-none bg-light" placeholder="123">
-                    </div>
-                  </div>
-                  <button type="button" class="btn btn-dark w-100 btn-lg py-3 fw-bold confirm-btn text-uppercase" style="letter-spacing: 2px; border-radius: 8px;">
-                    Confirmar Reserva — 255.000 €
-                  </button>
-                </form>
-
-                <div class="mt-4 text-center text-muted small secure-info">
-                  <p class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill me-1" viewBox="0 0 16 16"><path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 "/></svg> Transacción segura cifrada a 256-bit</p>
-                </div>
+              <div class="mt-4 text-center text-muted small secure-info">
+                <p class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-lock-fill me-1" viewBox="0 0 16 16">
+                    <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 " />
+                  </svg> Transacción segura cifrada a 256-bit</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
   <script type="text/javascript" src="./src/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script type="text/javascript" src="./src/js/animations.js"></script>
+  <script type="module" src="./src/main.js"></script>
   <script type="text/javascript" src="./src/js/david.js"></script>
   <script type="text/javascript" src="./src/js/roberto.js"></script>
   <script type="text/javascript" src="./src/js/ivan.js"></script>
 </body>
+
 
 </html>

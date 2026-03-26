@@ -14,8 +14,10 @@
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
+  --gold: #ffd700;
 
   font: 18px/145% var(--sans);
+
   letter-spacing: 0.18px;
   color-scheme: light dark;
   color: var(--text);
@@ -76,3 +78,219 @@ p {
   align-items: center;
   padding: 50px 20px;
 }
+
+/* Premium Navbar */
+.premium-navbar {
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  background: transparent;
+  backdrop-filter: blur(0px);
+  border-bottom: 1px solid transparent;
+  z-index: 10000;
+}
+
+.premium-navbar.scrolled {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.8rem 1rem !important;
+}
+
+.nav-link-premium {
+  color: white !important;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  transition: all 0.3s ease;
+  padding: 5px 0;
+  width: fit-content;
+}
+
+.nav-link-premium:hover {
+  color: var(--gold) !important;
+}
+
+
+/* Premium Carousel */
+.premium-carousel {
+  background: #000;
+}
+
+.carousel-slide {
+  z-index: 1;
+  will-change: transform, clip-path, opacity;
+}
+
+.carousel-slide.active {
+  z-index: 2;
+}
+
+.slide-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.1);
+  transition: transform 8s linear;
+  z-index: -1;
+  will-change: transform;
+}
+
+
+.carousel-slide.active .slide-image {
+  transform: scale(1);
+}
+
+.slide-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%);
+  z-index: 0;
+}
+
+
+.carousel-nav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 4rem !important;
+  display: flex !important;
+  justify-content: space-between;
+  align-items: flex-end;
+  z-index: 9999 !important; /* Capa suprema sobre el carrusel */
+  pointer-events: none !important;
+}
+
+.carousel-indicators-custom, .carousel-arrows {
+  pointer-events: auto !important; /* Habilitar interacción explícita */
+  opacity: 1 !important; /* Forzar visibilidad */
+}
+
+.arrow-btn {
+  color: white !important;
+  text-shadow: 0 0 10px rgba(0,0,0,0.5);
+  font-size: 2.5rem !important;
+}
+
+
+/* Navbar Restoration & Remaining Styles */
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+.nav-link-premium::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: var(--gold);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+
+.nav-link-premium:hover::after {
+  width: 100%;
+}
+
+
+.slide-title {
+  text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  letter-spacing: -2px;
+}
+
+.glass-btn {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.4s ease;
+}
+
+.glass-btn:hover {
+  background: white;
+  color: black !important;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.indicator {
+  width: 40px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.indicator.active {
+  background: var(--gold, #ffd700);
+  width: 80px;
+}
+
+.arrow-btn {
+  transition: all 0.3s ease;
+}
+
+.arrow-btn:hover {
+  transform: scale(1.2);
+  color: var(--gold, #ffd700) !important;
+}
+
+.hover-opacity-1:hover {
+  opacity: 1 !important;
+}
+
+@media (max-width: 768px) {
+  .slide-title {
+    font-size: 3rem;
+  }
+}
+
+.nav-link-premium {
+  color: var(--accent);
+}
+
+.text-gold {
+  color: #ffd700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.text-logo-grey {
+
+  color: #a1a1a1;
+  transition: color 0.3s ease;
+}
+
+.navbar-logo a:hover .text-logo-grey {
+  color: white;
+}
+
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animations for the navbar items on load */
+.navbar-logo, .navbar-links a {
+  opacity: 0;
+  transform: translateY(-20px);
+}
